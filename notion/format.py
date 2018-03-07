@@ -3,7 +3,7 @@ import numbers
 
 from .errors import NotionError
 
-class Format:
+class Format(object):
 
     @staticmethod
     def date(date):

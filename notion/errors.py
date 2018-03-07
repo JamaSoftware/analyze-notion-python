@@ -5,6 +5,6 @@ class NotionError(Exception):
 
 class NotionClientError(NotionError):
     def __init__(self, request, response, error):
-        super().__init__(error)
+        super(NotionClientError, self).__init__(error)
         self.request = request
         self.response = response
