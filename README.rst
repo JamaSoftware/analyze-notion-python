@@ -6,7 +6,7 @@ Use this client to report on ingredients, and create new ingredients.
 
 Install
 =======
-`pip install notion-python`
+``pip install notion-python``
 
 Usage
 =====
