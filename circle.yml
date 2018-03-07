@@ -1,3 +1,7 @@
+machine:
+  python:
+    version: 3.6
+
 test:
   post:
-    - pylint notion tests
+    - pylint --output-format parseable --disable C0111 notion tests

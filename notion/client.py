@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 import requests
 
 from .format import Format
-from .errors import NotionClientError
+from .errors import NotionClientError, NotionError
 
 class NotionClient:
 
@@ -22,15 +22,15 @@ class NotionClient:
         request = requests.Request('POST', url, json=json, headers=self.headers)
         response = None
         try:
-            with requests.Session() as s:
-                response = s.send(request.prepare())
-        except requests.exceptions.RequestException as e:
-            raise NotionClientError(request, response, e)
+            with requests.Session() as session:
+                response = session.send(request.prepare())
+        except requests.exceptions.RequestException as error:
+            raise NotionClientError(request, response, error)
 
         try:
             response.raise_for_status()
-        except requests.exceptions.RequestException as e:
-            raise NotionClientError(request, response, e)
+        except requests.exceptions.RequestException as error:
+            raise NotionClientError(request, response, error)
 
         return response
 
@@ -63,13 +63,13 @@ class NotionClient:
         arg_error_msg = 'one of ingredient_id or ingredient_key is required'
 
         if ingredient_key and ingredient_id:
-            raise ArgumentError(arg_error_msg)
+            raise NotionError(arg_error_msg)
         elif ingredient_key:
             data['ingredient_key'] = ingredient_key
         elif ingredient_id:
             data['ingredient_id'] = ingredient_id
         else:
-            raise ArgumentError(arg_error_msg)
+            raise NotionError(arg_error_msg)
 
         return self._request('/api/v1/report', data)
 
