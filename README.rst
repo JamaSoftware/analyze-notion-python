@@ -1,12 +1,16 @@
 Notion API Client
 =================
+.. image:: https://circleci.com/gh/notion-data/notion-python/tree/master.svg?style=shield
+    :target: https://circleci.com/gh/notion-data/notion-python/tree/master
 
 This is the python client for the Notion API.
 Use this client to report on ingredients, and create new ingredients.
 
 Install
 =======
-``pip install notion-python``
+.. code:: sh
+
+    pip install notion-python
 
 Usage
 =====
@@ -39,3 +43,10 @@ Error Handling
 --------------
 All methods will raise a subclass of ``notion.NotionError`` in the event that
 the request could not be made, or an error occurred.
+
+
+Tests
+=====
+.. code:: sh
+
+    env NOTION_TOKEN=FOOBAR NOTION_API_ROOT=https://app.usenotion.com python -m unittest discover

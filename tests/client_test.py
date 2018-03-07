@@ -66,6 +66,6 @@ class CreateIngredient(RequestTestCase):
                 {'date': datetime.now() + timedelta(days=1), 'value': 2},
                 {'date': datetime.now() + timedelta(days=4), 'value': 3},
             ])
-            self.assertFail()
+            self.fail()
         except notion.NotionClientError as e:
             self.assertFalse(e.response.ok)
