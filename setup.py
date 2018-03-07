@@ -1,8 +1,16 @@
 from setuptools import setup, find_packages
+from os.path import realpath, dirname, join
+
+def long_description():
+    readme_path = join(dirname(realpath(__file__)), 'README.rst')
+    with open(readme_path) as readme:
+        return readme.read()
+
 setup(
     name='notion-python',
     version='1.0.0',
     description='API Client for Notion',
+    long_description=long_description(),
     classifiers=[
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3.4',
