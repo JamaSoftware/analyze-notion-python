@@ -58,3 +58,14 @@ class CreateIngredient(RequestTestCase):
             {'date': datetime.now() + timedelta(days=2), 'value': 3},
             {'date': datetime.now() + timedelta(days=3), 'value': 0},
         ])
+
+    def test_create_ingredient_bad_data(self):
+        try:
+            self.api.create_ingredient('test_create_ingredient', [
+                {'date': datetime.now(), 'value': 1},
+                {'date': datetime.now() + timedelta(days=1), 'value': 2},
+                {'date': datetime.now() + timedelta(days=4), 'value': 3},
+            ])
+            self.assertFail()
+        except notion.NotionClientError as e:
+            self.assertFalse(e.response.ok)
