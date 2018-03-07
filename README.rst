@@ -45,8 +45,20 @@ All methods will raise a subclass of ``notion.NotionError`` in the event that
 the request could not be made, or an error occurred.
 
 
+Development
+===========
+
+Install
+-------
+.. code:: sh
+
+    git clone https://github.com/notion-data/notion-python.git
+    cd notion-python
+    pip install -e .
+
 Tests
-=====
+-----
 .. code:: sh
 
     env NOTION_TOKEN=FOOBAR NOTION_API_ROOT=https://app.usenotion.com python -m unittest discover
+    pylint --output-format parseable --disable C0111 notion tests
