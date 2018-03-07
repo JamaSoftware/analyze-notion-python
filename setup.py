@@ -8,7 +8,7 @@ def long_description():
 
 setup(
     name='notion-python',
-    version='1.0.0',
+    version='1.0.1',
     description='API Client for Notion',
     long_description=long_description(),
     classifiers=[
