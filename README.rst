@@ -3,6 +3,9 @@ Notion API Client
 .. image:: https://circleci.com/gh/notion-data/notion-python/tree/master.svg?style=shield
     :target: https://circleci.com/gh/notion-data/notion-python/tree/master
 
+.. image:: https://img.shields.io/pypi/v/notion-python.svg
+    :target: https://pypi.org/project/notion-python/
+
 This is the python client for the Notion API.
 Use this client to report on ingredients, and create new ingredients.
 
