@@ -17,7 +17,7 @@ class NotionClient(object):
         }
 
 
-    def _request(self, path, json):
+    def _request(self, path,  json):
         url = self.api_root + path
         request = requests.Request('POST', url, json=json, headers=self.headers)
         response = None
