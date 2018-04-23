@@ -18,7 +18,7 @@ Install
 Usage
 =====
 Get your API Token, and ingredient information from here:
-https://app.usenotion.com/api_control_panel
+https://analyze.jamacloud.com/api_control_panel
 
 .. code:: python
 
@@ -63,5 +63,5 @@ Tests
 -----
 .. code:: sh
 
-    env NOTION_TOKEN=FOOBAR NOTION_API_ROOT=https://app.usenotion.com python -m unittest discover
+    env NOTION_TOKEN=FOOBAR NOTION_API_ROOT=https://analyze.jamacloud.com python -m unittest discover
     pylint --output-format parseable --disable C0111 notion tests

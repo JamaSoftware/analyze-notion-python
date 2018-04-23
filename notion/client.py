@@ -7,7 +7,7 @@ from .errors import NotionClientError, NotionError
 
 class NotionClient(object):
 
-    def __init__(self, api_token, _api_root='https://app.usenotion.com'):
+    def __init__(self, api_token, _api_root='https://analyze.jamacloud.com'):
         self.api_root = _api_root
 
         self.headers = {
